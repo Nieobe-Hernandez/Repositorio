@@ -1,91 +1,327 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>
-    Aplicaciones Web
-</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Equipo Dinamita</title>
 
+     <style type="text/css">
+        *{
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: sans-serif;
+        }
+        .header{
+            background-color:#7361E8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+            padding: 5px 10%;
+          
+        }
+            
+        }
+        body{
+            background-color: #EFEDFF;
+
+        }
+        .icon a{
+            display: block;
+            color: #ffffff;
+            size: 85px;
+        }
+        .icon a:hover{
+            transform: scale(1.2);
+            display: block;
+            color: #0000;
+        }
+        h2{
+            color: #ffff;
+        }
+        .icon button{
+            font-weight: 700;
+            color: #2F2E35;
+            padding: 9px 25px;
+            background-color: #EFEDFF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease 0;
+        }
+        .icon button:hover{
+            background-color: #ffff;
+            color: #7361E8;
+            transform: scale(1.1);
+        }
+        .content{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: auto;
+            background-color: #EFEDFF;
+
+        }
+        .rec{
+            padding: 15 px;
+            margin-top: 20px;
+            width: 30.33%;
+            height: 275px;
+            background-color: #ffffff;
+            border-radius: 30px;
+            color: #333339;
+            
+        }
+        .rec img{
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .rec button{
+            font-weight: 700;
+            color: #ffff;
+            padding: 9px 25px;
+            background-color: #814EFF;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease 0;
+        }
+        .rec button:hover{
+            background-color: #EFEDFF;
+            color:#2F2E35 ;
+            transform: scale(1.2);
+        }
+        td{
+            height: 40px;
+
+        }
+        /*overlay*/
+        .overlay{
+            background: rgb(0, 0, 0,.3);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            visibility: hidden;
+        }
+        .pop-up{
+            /*Este es el color que aún no me convence*/background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            box-shadow: 1px 5px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            width: 400px;
+            height: 300px;
+            padding: 10px;
+            color: #EFEDFF; 
+        }
+        .pop-up p{
+            text-align: center;
+            margin-top: 17px;
+        }
+        .pop-up .btn-cerrar{
+            margin: 7px;
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+            text-align: right;
+            color: #cccccc;
+            cursor: pointer;
+        }
+        .pop-up .btn-cerrar:hover{
+            color: #fffff;
+        }
+        .pop-up h4{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .overlay.active{
+                visibility: visible;
+        }
+
+      
+        
+    </style>
 </head>
-
-<body >
-    <center>
-   <div align="center" >
-<center>
-    <ol align="left">
-<il>&nbsp;Ingrid Emilia Alvarez Avílez</il><br>
-<il>Moises Santiago Gonzalez Retana </il><br>
-<il>Jaqueline Nieobe Hernandez Bernal </il><br>
-<il>Leonardo Landeros Ponciano </il><br>
-<il>Anett Yomali Vera Carbajal</il><br>
-<il>Villanueva Estrada Leyla Alondra</il><br>
-    </ol>
-</center>
-   </div> 
-
-
-<table border="2" >
-    <tr>
-<th>&nbsp;Matrícula</th>
-<th>Sexo</th>
-<th>Edad</th>
-<th>Enlace</th>
-</tr>
-
-
-
-<tr>
-<td>aqui va la matricula</td>
-
-    <td>Femenino</td>
+<header class="header">
+    <h2>EQUIPO DINAMITA</h2>
+    <div class="icon"><a href="#" class="btn-abrir" id="btn-abrir"><button>¿Quienes somos?</button></a></div>
     
-    <td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-   
-   
-   
-</tr>
 
-<tr>
-    <td>aqui va la matricula</td>
-<td>Masculino</td>
-<td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-   
-</tr>
+    
+</header>
+ <body>
+    <div class="overlay" id="overlay">
+        <div class="pop-up" id="pop-up">
+            <a href="#" id="btn-cerrar" class="btn-cerrar">X</a>
+            <h4 class="equipo">Equipo Dinamita</h4>
+            <li>Alvarez Avilez Ingrid Emilia</li>
+            <li>Landeros Ponciano Leonardo</li>
+            <li>Gonzales Retana Moises Santiago</li>
+            <li>Hernandez Bernal Jaqueline Nieobe</li>
+            <li>Vera Carbajal Anett Yomali</li>
+            <li>Leyla Alondra Villanueva Estrada</li>
+            <p>Somos el equipo Alfa buena maravilla onda dinamita escuadron lobo; pero como esta muy largo solo pusimos dinamita :)</p>
 
-<tr>
-    <td>aqui va la matricula</td>
-    <td>Femenina</td>
-    <td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-   
-</tr>
+        </div>
+    </div>
+ 
+    <div class="content">
+        <!-- Emilia -->
+        <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Ingrid  Emilia Alvarez Avilez</th>       
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn038</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
 
-<tr>
-    <td>aqui va la matricula</td>
-    <td>Masculino</td>
-    <td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-</tr>
+                        <td colspan="2"><center><a href="20223tn038.html"><button>20223tn038</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    <!-- Leo -->
+    <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leonardo Landeros Ponciano</th>        
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn063</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
 
-<tr>
-    <td>aqui va la matricula</td>
-    <td>Femenina</td>
-    <td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-   
-</tr>
+                        <td colspan="2"><center><a href="20223tn063.html"><button>20223tn063</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-<tr>
-    <td>aqui va la matricula</td>
-    <td>Femenina</td>
-    <td>aqui la edad</td>
-    <td><a href=".html"></a></td>
-   
-</tr>
-</table>
+        <!-- Moi -->
+        <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moises Santiago Gonzales Retana</th>        
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn055</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
 
+                        <td colspan="2"><center><a href="20223tn055.html"><button>20223tn055</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Nay -->
+        <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jaqueline Nieobe Hernadez Bernal</th>      
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn057</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2"><center><a href="20223tn057.html"><button>20223tn057</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Anett -->
+        <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anett Yomali Vera Carbajal</th>        
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn034</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2"><center><a href="20223tn034.html"><button>20223tn034</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Ley-->
+        <div class="rec">
+            <center><img class="integrante" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvxl9wNLQYnOl_1GLfql022Ndp-93E6nmxQ&usqp=CAU"></center>
+            <table>
+                <thead>
+                    <th > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leyla Alondra Villanueva Estrada</th>     
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matricula</td>
+                        <td> 20223tn036</td>
+                    </tr>
+                    <tr>
+                        <td>Edad: 18</td>
+                        <td>Mujer</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2"><center><a href="20223tn036<.html"><button>20223tn036</button></a></center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+ <script type="text/javascript" src="main.js"></script>
 </body>
-</center>
 </html>
