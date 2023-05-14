@@ -72,3 +72,15 @@ h3, a{
     font-size: 40px;
     text-shadow: 1px 1px 5px gray;
 }
+
+.icon a i{
+    color: #EFEFF0;
+    margin-left: 0px;
+    font-size: 35px;
+    }
+
+    .icon a i:hover{
+   
+    color: #ffffff;
+    transform: scale(2.3);
+    }
