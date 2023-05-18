@@ -1,3 +1,4 @@
+<!DOCTYPE html> 
 <html>
     <head>
         <meta charset="utf-8">
@@ -66,6 +67,7 @@
         }
     
     section img {
+         width: 49%;
         width: 0px;
         flex-grow: 1;
         object-fit: cover;
@@ -78,7 +80,25 @@
         opacity: 1;
         filter: contrast(120%);
     }  
-  </style>
+    .boton{ 
+        width: 45%;
+        background: #b9b9ba25;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-left: 30%;
+        margin-right: 30%; 
+        position: absolute; 
+        left:250px;    
+        top: 800px;
+    }
+    #imagen {
+  width: 200px;
+  height: 200px;
+    }
+      </style>
   <header class="header";">     
         <div class="icon">
             <a href="index.html"><i class="bi bi-caret-left-fill"></i></a> 
@@ -89,7 +109,7 @@
         <title>Studio Ghibli Films</title>
     </head>
     <body>
-     <body background="https://cinemasaturno.com/wp-content/uploads/2021/06/castillo-vagabundo-cover.jpg"></body>
+    <body background="https://cinemasaturno.com/wp-content/uploads/2021/06/castillo-vagabundo-cover.jpg"></body>
 <div class="cont">
     <h1>Studio Ghibli Films</h1>
     <p>Studio Ghibli es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.    
@@ -109,6 +129,7 @@
     <img src="https://es.web.img3.acsta.net/medias/nmedia/18/84/87/96/19769123.jpg" alt="Arriety">
     <img src="https://static.wikia.nocookie.net/studioghibli/images/d/d8/El_castillo_ambulante_portada_ESP.jpg/revision/latest?cb=20200706151536&path-prefix=es" alt="El increible castillo Ambulante">
 </section>
+
 <div class="cont">
    <p><h2>El Castillo Ambulante</h2></p>
     <br>
@@ -128,5 +149,72 @@
     <br><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
 </div>
 </div>
+<div class="boton"> <center>
+<div> <script>
+    const imagenesDeFondo = [
+      "https://fondosmil.com/fondo/113296.jpg",
+      "https://image.tmdb.org/t/p/original/vwBa7djy1oxfxUjc7YtVgGNsjrT.jpg",
+      "https://cinemasaturno.com/wp-content/uploads/2021/06/castillo-vagabundo-cover.jpg",
+      "https://images8.alphacoders.com/105/thumb-1920-1053126.jpg"
+    ];
+
+    function cambiarFondo() {
+      const indiceAleatorio = Math.floor(Math.random() * imagenesDeFondo.length);
+      const nuevaImagen = imagenesDeFondo[indiceAleatorio];
+      document.body.style.backgroundImage = `url('${nuevaImagen}')`;
+    }
+  </script> <button id="cambiarImagen" onclick="cambiarFondo()">Cambiar Fondo</button> 
+  </div>
+
+    <div><script> function cambiarTexto() {
+        const elemento = document.getElementById("texto");
+        elemento.textContent = "pues sigue queriendo...";
+      }
+      </script>
+       <br><p id="texto"><strong>¿Quieres ver como cambia mi texto?</strong></p> 
+<button onclick="cambiarTexto()">Cambiar Texto</button>
+    </div>
+
+    <div>
+        <script>function cambiarImagen(nuevaImagen) {
+            const imagen = document.getElementById("imagen");
+            imagen.src = nuevaImagen;
+          }
+          
+          function restaurarImagen() {
+            const imagen = document.getElementById("imagen");
+            imagen.src = "https://static1.srcdn.com/wordpress/wp-content/uploads/2021/09/Sophie-Calcifer-1.jpg";
+          }
+          </script>
+          <br>
+          <img id="imagen" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/09/Sophie-Calcifer-1.jpg" alt="Imagen original">
+          <button onclick="cambiarImagen('https://img2.rtve.es/imagenes/fotograma-castillo-ambulantte/1593422095076.jpg')">Cambiar Imagen</button>
+          <button onclick="restaurarImagen()">Restaurar Imagen</button>          
+    </div>
+
+    <div>
+        <script>function ocultarMensaje() {
+            const mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "none";
+          }          
+        </script><br>
+        <h2 id="mensaje">Hola mundo</h2>
+        <button onclick="ocultarMensaje()">Ocultar Mensaje</button>        
+    </div>
+
+    <div>
+        <script>function escribirTexto() {
+            const div = document.getElementById("miDiv");
+            const h1 = document.createElement("h1");
+            h1.textContent = "Este texto no lo escribió NIEOBE, lo escribió JavaScript";
+            div.appendChild(h1);
+          }
+        </script><br>
+        <button onclick="escribirTexto()">Escribir Texto</button>
+        <div id="miDiv"></div>        
+    </div>
+</center>
+</div>
+
     </body>
 </html>
