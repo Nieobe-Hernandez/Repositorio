@@ -139,12 +139,15 @@ body{
 
 <div class="contenedor">
 <h2><a href="https://www.cosmopolitan.com/es/famosos/musica/a28813311/taylor-swift-lover-canciones/" title="&nbsp;Guía para escuchar lobver">LOVER</a></h2>
-<center><img src="lover.gift.webp" alt="lover " class="lover"></center>
+<center><img  class="lover" src="" alt="Imagen" id="imagent"></center>
 <p align="justify">&nbsp;Durante el documental se nos muestra el proceso creativo que lleva a cabo Taylor Swift para realizar su séptimo álbum LOVER debido a las criticas realizadas hacia su anterior álbum REPUTATION, además de que se muestra el momento en el que recibe una llamada en la que le informan que REPUTATION fue descartado para los GRAMYS, sin embargo, ella decide realizar LOVER convirtiéndose en el primer álbum producido por ella misma.
     <br>
        Swift declaró que escribió "LOVER" desde un "lugar abierto, libre, romántico y caprichoso", y agregó que el álbum se sentía "estéticamente muy diurno", mientras que su predecesor " REPUTATION " era "todo paisaje urbano, oscuridad, bruja de pantano completo" 
     </p>
 
+    <button onclick="mostrarImagenAnterior()">Anterior</button>
+  
+    <button onclick="mostrarImagenSiguiente()">Siguiente</button>
 </div>
 
 
@@ -233,6 +236,49 @@ var cambiarTextoBtn = document.getElementById("cambiarTextoBtn");
       var div = document.getElementById("miDiv");
       div.innerHTML = ""; // Eliminar todo el contenido del div
     }
+
+
+
+    //arreglo de imagenes
+
+
+
+    var imagenes = ["imagen/lo.jpg", "imagen/tlo.jpg", "imagen/tayl.jpg", "imagen/portadaLgif", "imagen/me.gif", "imagen/lover.gif"];
+    var indiceActual = 0;
+    var imagenElement = document.getElementById("imagent");
+
+    // Función para mostrar la imagen anterior
+    function mostrarImagenAnterior() {
+      if (indiceActual === 0) {
+        // Si estamos en la primera imagen, mostramos la última
+        indiceActual = imagenes.length - 1;
+      } else {
+        // Retrocedemos al índice anterior
+        indiceActual--;
+      }
+      mostrarImagenActual();
+    }
+
+    // Función para mostrar la imagen siguiente
+    function mostrarImagenSiguiente() {
+      if (indiceActual === imagenes.length - 1) {
+        // Si estamos en la última imagen, volvemos a la primera
+        indiceActual = 0;
+      } else {
+        // Avanzamos al índice siguiente
+        indiceActual++;
+      }
+      mostrarImagenActual();
+    }
+
+    // Función para mostrar la imagen actual
+    function mostrarImagenActual() {
+      var imagenActual = imagenes[indiceActual];
+      imagenElement.src = imagenActual;
+    }
+
+    // Mostrar la primera imagen al cargar la página
+    mostrarImagenActual();
        </script>
 </body>
 
